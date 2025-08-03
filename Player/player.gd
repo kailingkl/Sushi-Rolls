@@ -9,7 +9,10 @@ const JUMP_FORCE = -1500.0
 const FALL_MULTIPLIER = 2.5
 const JUMP_CUT_MULTIPLIER = 3.0
 
+var last_checkpoint : Vector2
+
 func _physics_process(delta: float) -> void:
+	
 	# Get input direction (-1, 0, or 1)
 	var direction := Input.get_axis("ui_left", "ui_right")
 
@@ -32,3 +35,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 
 	move_and_slide()
+	
+func _ready() -> void:
+	last_checkpoint = position
+
+func die():
+	position = last_checkpoint

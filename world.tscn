@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://eajca361xibv"]
+[gd_scene load_steps=23 format=4 uid="uid://eajca361xibv"]
 
 [ext_resource type="Texture2D" uid="uid://bd77rfbv4olfd" path="res://icon.svg" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://dg5crgsuq71ue" path="res://Player/player.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://lwio0lanov27" path="res://death_container.tscn" id="3_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://cvx1ji3otre3c" path="res://Tilemap/tilemap.png" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://q6r0ge70vanw" path="res://ConveyorLoop.tscn" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://cdwu3aw8pg12a" path="res://Enemies/3.png" id="5_gbfbk"]
@@ -9,6 +10,10 @@
 [ext_resource type="Script" uid="uid://cchusrf6md5cx" path="res://back_n_forth.gd" id="6_gbfbk"]
 [ext_resource type="Texture2D" uid="uid://1x7t7to1jvwj" path="res://Enemies/2.png" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://bkxe0aqewmfas" path="res://Enemies/4.png" id="8_ioo17"]
+[ext_resource type="PackedScene" uid="uid://cw1f1v4djqx66" path="res://V2Loop.tscn" id="10_wse8f"]
+[ext_resource type="Texture2D" uid="uid://c7g51we73pq31" path="res://Enemies/5.png" id="11_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://dc7exhsnvp5j1" path="res://Enemies/6.png" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://18wpnr8fk6ea" path="res://checkpoint.tscn" id="14_hiqwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
 size = Vector2(104, 20)
@@ -9137,12 +9142,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_aqk2v")
 
-[sub_resource type="Curve2D" id="Curve2D_ioo17"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1793, -320, 0, 0, 0, 0, 5013, -317, 0, 0, 0, 0, 5039, -316, 0, 0, 0, 0, 5057, -314, 0, 0, 0, 0, 5074, -312, 0, 0, 0, 0, 5089, -308, 0, 0, 0, 0, 5100, -305, 0, 0, 0, 0, 5111, -299, 0, 0, 0, 0, 5122, -293, 0, 0, 0, 0, 5134, -285, 0, 0, 0, 0, 5143, -278, 0, 0, 0, 0, 5152, -267, 0, 0, 0, 0, 5161, -257, 0, 0, 0, 0, 5167, -248, 0, 0, 0, 0, 5171, -239, 0, 0, 0, 0, 5175, -230, 0, 0, 0, 0, 5179, -220, 0, 0, 0, 0, 5180, -212, 0, 0, 0, 0, 5182, -203, 0, 0, 0, 0, 5184, -191, 0, 0, 0, 0, 5183, 852, 0, 0, 0, 0, 5183, 871, 0, 0, 0, 0, 5180, 882, 0, 0, 0, 0, 5175, 897, 0, 0, 0, 0, 5167, 911, 0, 0, 0, 0, 5161, 925, 0, 0, 0, 0, 5151, 939, 0, 0, 0, 0, 5138, 948, 0, 0, 0, 0, 5125, 958, 0, 0, 0, 0, 5110, 967, 0, 0, 0, 0, 5095, 972, 0, 0, 0, 0, 5078, 974, 0, 0, 0, 0, 5064, 975, 0, 0, 0, 0, 1789, 977, 0, 0, 0, 0, 1730, 974, 0, 0, 0, 0, 1711, 973, 0, 0, 0, 0, 1694, 972, 0, 0, 0, 0, 1679, 968, 0, 0, 0, 0, 1665, 961, 0, 0, 0, 0, 1652, 953, 0, 0, 0, 0, 1639, 945, 0, 0, 0, 0, 1630, 935, 0, 0, 0, 0, 1622, 926, 0, 0, 0, 0, 1616, 919, 0, 0, 0, 0, 1609, 909, 0, 0, 0, 0, 1605, 900, 0, 0, 0, 0, 1602, 890, 0, 0, 0, 0, 1598, 881, 0, 0, 0, 0, 1595, 866, 0, 0, 0, 0, 1594, 854, 0, 0, 0, 0, 1593, 840, 0, 0, 0, 0, 1594, 826, 0, 0, 0, 0, 1595, -187, 0, 0, 0, 0, 1594, -198, 0, 0, 0, 0, 1596, -208, 0, 0, 0, 0, 1599, -217, 0, 0, 0, 0, 1602, -228, 0, 0, 0, 0, 1606, -236, 0, 0, 0, 0, 1610, -245, 0, 0, 0, 0, 1615, -253, 0, 0, 0, 0, 1620, -259, 0, 0, 0, 0, 1624, -265, 0, 0, 0, 0, 1629, -270, 0, 0, 0, 0, 1636, -277, 0, 0, 0, 0, 1643, -283, 0, 0, 0, 0, 1649, -288, 0, 0, 0, 0, 1657, -292, 0, 0, 0, 0, 1663, -296, 0, 0, 0, 0, 1670, -300, 0, 0, 0, 0, 1681, -304, 0, 0, 0, 0, 1692, -307, 0, 0, 0, 0, 1706, -311, 0, 0, 0, 0, 1730, -315, 0, 0, 0, 0, 1791, -320)
-}
-point_count = 74
-
 [sub_resource type="Curve2D" id="Curve2D_wse8f"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2505, -1366, 0, 0, 0, 0, 2504, -1244, 0, 0, 0, 0, 2505, -1215, 0, 0, 0, 0, 2507, -1202, 0, 0, 0, 0, 2512, -1190, 0, 0, 0, 0, 2516, -1181, 0, 0, 0, 0, 2520, -1173, 0, 0, 0, 0, 2525, -1165, 0, 0, 0, 0, 2531, -1159, 0, 0, 0, 0, 2537, -1151, 0, 0, 0, 0, 2544, -1145, 0, 0, 0, 0, 2550, -1139, 0, 0, 0, 0, 2557, -1134, 0, 0, 0, 0, 2564, -1129, 0, 0, 0, 0, 2573, -1124, 0, 0, 0, 0, 2581, -1121, 0, 0, 0, 0, 2591, -1117, 0, 0, 0, 0, 2600, -1114, 0, 0, 0, 0, 2608, -1112, 0, 0, 0, 0, 2617, -1111, 0, 0, 0, 0, 3673, -1113, 0, 0, 0, 0, 3687, -1115, 0, 0, 0, 0, 3694, -1117, 0, 0, 0, 0, 3703, -1120, 0, 0, 0, 0, 3710, -1123, 0, 0, 0, 0, 3718, -1126, 0, 0, 0, 0, 3725, -1130, 0, 0, 0, 0, 3732, -1135, 0, 0, 0, 0, 3739, -1139, 0, 0, 0, 0, 3746, -1146, 0, 0, 0, 0, 3752, -1152, 0, 0, 0, 0, 3759, -1159, 0, 0, 0, 0, 3765, -1165, 0, 0, 0, 0, 3768, -1172, 0, 0, 0, 0, 3772, -1178, 0, 0, 0, 0, 3776, -1186, 0, 0, 0, 0, 3780, -1195, 0, 0, 0, 0, 3782, -1202, 0, 0, 0, 0, 3783, -1209, 0, 0, 0, 0, 3785, -1219, 0, 0, 0, 0, 3786, -1225, 0, 0, 0, 0, 3786, -1234, 0, 0, 0, 0, 3786, -1368)
@@ -9150,6 +9149,24 @@ _data = {
 point_count = 43
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwbse"]
+
+[sub_resource type="Curve2D" id="Curve2D_ioo17"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1793, -320, 0, 0, 0, 0, 5013, -317, 0, 0, 0, 0, 5039, -316, 0, 0, 0, 0, 5057, -314, 0, 0, 0, 0, 5074, -312, 0, 0, 0, 0, 5089, -308, 0, 0, 0, 0, 5100, -305, 0, 0, 0, 0, 5111, -299, 0, 0, 0, 0, 5122, -293, 0, 0, 0, 0, 5134, -285, 0, 0, 0, 0, 5143, -278, 0, 0, 0, 0, 5152, -267, 0, 0, 0, 0, 5161, -257, 0, 0, 0, 0, 5167, -248, 0, 0, 0, 0, 5171, -239, 0, 0, 0, 0, 5175, -230, 0, 0, 0, 0, 5179, -220, 0, 0, 0, 0, 5180, -212, 0, 0, 0, 0, 5182, -203, 0, 0, 0, 0, 5184, -191, 0, 0, 0, 0, 5183, 852, 0, 0, 0, 0, 5183, 871, 0, 0, 0, 0, 5180, 882, 0, 0, 0, 0, 5175, 897, 0, 0, 0, 0, 5167, 911, 0, 0, 0, 0, 5161, 925, 0, 0, 0, 0, 5151, 939, 0, 0, 0, 0, 5138, 948, 0, 0, 0, 0, 5125, 958, 0, 0, 0, 0, 5110, 967, 0, 0, 0, 0, 5095, 972, 0, 0, 0, 0, 5078, 974, 0, 0, 0, 0, 5064, 975, 0, 0, 0, 0, 1789, 977, 0, 0, 0, 0, 1730, 974, 0, 0, 0, 0, 1711, 973, 0, 0, 0, 0, 1694, 972, 0, 0, 0, 0, 1679, 968, 0, 0, 0, 0, 1665, 961, 0, 0, 0, 0, 1652, 953, 0, 0, 0, 0, 1639, 945, 0, 0, 0, 0, 1630, 935, 0, 0, 0, 0, 1622, 926, 0, 0, 0, 0, 1616, 919, 0, 0, 0, 0, 1609, 909, 0, 0, 0, 0, 1605, 900, 0, 0, 0, 0, 1602, 890, 0, 0, 0, 0, 1598, 881, 0, 0, 0, 0, 1595, 866, 0, 0, 0, 0, 1594, 854, 0, 0, 0, 0, 1593, 840, 0, 0, 0, 0, 1594, 826, 0, 0, 0, 0, 1595, -187, 0, 0, 0, 0, 1594, -198, 0, 0, 0, 0, 1596, -208, 0, 0, 0, 0, 1599, -217, 0, 0, 0, 0, 1602, -228, 0, 0, 0, 0, 1606, -236, 0, 0, 0, 0, 1610, -245, 0, 0, 0, 0, 1615, -253, 0, 0, 0, 0, 1620, -259, 0, 0, 0, 0, 1624, -265, 0, 0, 0, 0, 1629, -270, 0, 0, 0, 0, 1636, -277, 0, 0, 0, 0, 1643, -283, 0, 0, 0, 0, 1649, -288, 0, 0, 0, 0, 1657, -292, 0, 0, 0, 0, 1663, -296, 0, 0, 0, 0, 1670, -300, 0, 0, 0, 0, 1681, -304, 0, 0, 0, 0, 1692, -307, 0, 0, 0, 0, 1706, -311, 0, 0, 0, 0, 1730, -315, 0, 0, 0, 0, 1791, -320)
+}
+point_count = 74
+
+[sub_resource type="Curve2D" id="Curve2D_ic0uy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 13504, 431, 0, 0, 0, 0, 12719, 432, 0, 0, 0, 0, 12697, 436, 0, 0, 0, 0, 12676, 443, 0, 0, 0, 0, 12660, 451, 0, 0, 0, 0, 12648, 460, 0, 0, 0, 0, 12636, 470, 0, 0, 0, 0, 12627, 479, 0, 0, 0, 0, 12614, 495, 0, 0, 0, 0, 12605, 513, 0, 0, 0, 0, 12599, 529, 0, 0, 0, 0, 12596, 549, 0, 0, 0, 0, 12594, 568, 0, 0, 0, 0, 12594, 584, 0, 0, 0, 0, 12593, 1085, 0, 0, 0, 0, 12594, 1099, 0, 0, 0, 0, 12596, 1110, 0, 0, 0, 0, 12598, 1119, 0, 0, 0, 0, 12603, 1129, 0, 0, 0, 0, 12607, 1138, 0, 0, 0, 0, 12612, 1147, 0, 0, 0, 0, 12621, 1158, 0, 0, 0, 0, 12626, 1166, 0, 0, 0, 0, 12634, 1173, 0, 0, 0, 0, 12642, 1180, 0, 0, 0, 0, 12651, 1188, 0, 0, 0, 0, 12660, 1193, 0, 0, 0, 0, 12669, 1198, 0, 0, 0, 0, 12678, 1201, 0, 0, 0, 0, 12688, 1203, 0, 0, 0, 0, 12699, 1206, 0, 0, 0, 0, 12710, 1207, 0, 0, 0, 0, 12728, 1208, 0, 0, 0, 0, 13505, 1207, 0, 0, 0, 0, 13525, 1205, 0, 0, 0, 0, 13534, 1202, 0, 0, 0, 0, 13543, 1198, 0, 0, 0, 0, 13553, 1194, 0, 0, 0, 0, 13561, 1189, 0, 0, 0, 0, 13572, 1183, 0, 0, 0, 0, 13579, 1178, 0, 0, 0, 0, 13586, 1172, 0, 0, 0, 0, 13594, 1162, 0, 0, 0, 0, 13603, 1150, 0, 0, 0, 0, 13609, 1138, 0, 0, 0, 0, 13615, 1128, 0, 0, 0, 0, 13619, 1117, 0, 0, 0, 0, 13621, 1103, 0, 0, 0, 0, 13623, 1091, 0, 0, 0, 0, 13624, 1074, 0, 0, 0, 0, 13623, 1059, 0, 0, 0, 0, 13622, 556, 0, 0, 0, 0, 13621, 543, 0, 0, 0, 0, 13619, 533, 0, 0, 0, 0, 13617, 525, 0, 0, 0, 0, 13614, 519, 0, 0, 0, 0, 13610, 508, 0, 0, 0, 0, 13605, 500, 0, 0, 0, 0, 13600, 491, 0, 0, 0, 0, 13594, 483, 0, 0, 0, 0, 13588, 476, 0, 0, 0, 0, 13583, 471, 0, 0, 0, 0, 13577, 466, 0, 0, 0, 0, 13570, 460, 0, 0, 0, 0, 13562, 455, 0, 0, 0, 0, 13555, 450, 0, 0, 0, 0, 13548, 446, 0, 0, 0, 0, 13541, 442, 0, 0, 0, 0, 13529, 437, 0, 0, 0, 0, 13516, 432, 0, 0, 0, 0, 13504, 431)
+}
+point_count = 71
+
+[sub_resource type="Curve2D" id="Curve2D_k3n1d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 7740, -707, 0, 0, 0, 0, 7741, 75, 0, 0, 0, 0, 7742, 103, 0, 0, 0, 0, 7752, 131, 0, 0, 0, 0, 7765, 154, 0, 0, 0, 0, 7783, 172, 0, 0, 0, 0, 7801, 186, 0, 0, 0, 0, 7825, 199, 0, 0, 0, 0, 7851, 205, 0, 0, 0, 0, 7881, 206, 0, 0, 0, 0, 13500, 204, 0, 0, 0, 0, 13533, 201, 0, 0, 0, 0, 13557, 194, 0, 0, 0, 0, 13579, 179, 0, 0, 0, 0, 13600, 160, 0, 0, 0, 0, 13615, 139, 0, 0, 0, 0, 13627, 113, 0, 0, 0, 0, 13630, 84, 0, 0, 0, 0, 13630, 45, 0, 0, 0, 0, 13630, 3, 0, 0, 0, 0, 13630, -31, 0, 0, 0, 0, 13629, -698, 0, 0, 0, 0, 13628, -714, 0, 0, 0, 0, 13626, -723, 0, 0, 0, 0, 13623, -731, 0, 0, 0, 0, 13620, -739, 0, 0, 0, 0, 13617, -746, 0, 0, 0, 0, 13613, -754, 0, 0, 0, 0, 13607, -765, 0, 0, 0, 0, 13601, -772, 0, 0, 0, 0, 13595, -779, 0, 0, 0, 0, 13588, -786, 0, 0, 0, 0, 13580, -793, 0, 0, 0, 0, 13573, -798, 0, 0, 0, 0, 13565, -803, 0, 0, 0, 0, 13557, -808, 0, 0, 0, 0, 13547, -812, 0, 0, 0, 0, 13537, -815, 0, 0, 0, 0, 13527, -818, 0, 0, 0, 0, 13512, -819, 0, 0, 0, 0, 13494, -819, 0, 0, 0, 0, 12732, -820, 0, 0, 0, 0, 12715, -819, 0, 0, 0, 0, 12699, -815, 0, 0, 0, 0, 12688, -812, 0, 0, 0, 0, 12680, -809, 0, 0, 0, 0, 12674, -806, 0, 0, 0, 0, 12666, -802, 0, 0, 0, 0, 12661, -799, 0, 0, 0, 0, 12654, -794, 0, 0, 0, 0, 12647, -788, 0, 0, 0, 0, 12641, -783, 0, 0, 0, 0, 12636, -778, 0, 0, 0, 0, 12631, -772, 0, 0, 0, 0, 12627, -766, 0, 0, 0, 0, 12623, -760, 0, 0, 0, 0, 12620, -755, 0, 0, 0, 0, 12616, -748, 0, 0, 0, 0, 12613, -741, 0, 0, 0, 0, 12611, -735, 0, 0, 0, 0, 12609, -727, 0, 0, 0, 0, 12607, -719, 0, 0, 0, 0, 12605, -712, 0, 0, 0, 0, 12605, -704, 0, 0, 0, 0, 12604, -689, 0, 0, 0, 0, 12604, -370, 0, 0, 0, 0, 12603, -363, 0, 0, 0, 0, 12602, -354, 0, 0, 0, 0, 12600, -348, 0, 0, 0, 0, 12596, -342, 0, 0, 0, 0, 12593, -338, 0, 0, 0, 0, 12589, -334, 0, 0, 0, 0, 12584, -328, 0, 0, 0, 0, 12578, -324, 0, 0, 0, 0, 12572, -320, 0, 0, 0, 0, 12565, -318, 0, 0, 0, 0, 12557, -316, 0, 0, 0, 0, 12550, -314, 0, 0, 0, 0, 12542, -313, 0, 0, 0, 0, 12534, -312, 0, 0, 0, 0, 12525, -311, 0, 0, 0, 0, 12514, -310, 0, 0, 0, 0, 12497, -309, 0, 0, 0, 0, 12481, -308, 0, 0, 0, 0, 10639, -310, 0, 0, 0, 0, 10630, -310, 0, 0, 0, 0, 10625, -310, 0, 0, 0, 0, 10618, -310, 0, 0, 0, 0, 10613, -311, 0, 0, 0, 0, 10608, -312, 0, 0, 0, 0, 10604, -313, 0, 0, 0, 0, 10600, -315, 0, 0, 0, 0, 10597, -318, 0, 0, 0, 0, 10591, -321, 0, 0, 0, 0, 10588, -323, 0, 0, 0, 0, 10585, -326, 0, 0, 0, 0, 10582, -329, 0, 0, 0, 0, 10580, -332, 0, 0, 0, 0, 10576, -335, 0, 0, 0, 0, 10573, -338, 0, 0, 0, 0, 10571, -341, 0, 0, 0, 0, 10569, -345, 0, 0, 0, 0, 10566, -349, 0, 0, 0, 0, 10565, -353, 0, 0, 0, 0, 10562, -357, 0, 0, 0, 0, 10560, -362, 0, 0, 0, 0, 10559, -367, 0, 0, 0, 0, 10558, -371, 0, 0, 0, 0, 10558, -375, 0, 0, 0, 0, 10558, -384, 0, 0, 0, 0, 10558, -701, 0, 0, 0, 0, 10559, -708, 0, 0, 0, 0, 10557, -713, 0, 0, 0, 0, 10555, -720, 0, 0, 0, 0, 10553, -727, 0, 0, 0, 0, 10551, -735, 0, 0, 0, 0, 10549, -741, 0, 0, 0, 0, 10547, -745, 0, 0, 0, 0, 10544, -751, 0, 0, 0, 0, 10541, -757, 0, 0, 0, 0, 10537, -763, 0, 0, 0, 0, 10533, -769, 0, 0, 0, 0, 10530, -773, 0, 0, 0, 0, 10527, -778, 0, 0, 0, 0, 10524, -781, 0, 0, 0, 0, 10520, -785, 0, 0, 0, 0, 10515, -789, 0, 0, 0, 0, 10511, -793, 0, 0, 0, 0, 10507, -797, 0, 0, 0, 0, 10501, -801, 0, 0, 0, 0, 10497, -802, 0, 0, 0, 0, 10494, -804, 0, 0, 0, 0, 10489, -808, 0, 0, 0, 0, 10484, -810, 0, 0, 0, 0, 10478, -812, 0, 0, 0, 0, 10472, -815, 0, 0, 0, 0, 10467, -816, 0, 0, 0, 0, 10462, -817, 0, 0, 0, 0, 10457, -819, 0, 0, 0, 0, 10451, -821, 0, 0, 0, 0, 10446, -821, 0, 0, 0, 0, 10441, -821, 0, 0, 0, 0, 10433, -821, 0, 0, 0, 0, 10418, -821, 0, 0, 0, 0, 9670, -823, 0, 0, 0, 0, 9661, -822, 0, 0, 0, 0, 9653, -822, 0, 0, 0, 0, 9640, -820, 0, 0, 0, 0, 9633, -820, 0, 0, 0, 0, 9627, -818, 0, 0, 0, 0, 9618, -815, 0, 0, 0, 0, 9612, -813, 0, 0, 0, 0, 9606, -811, 0, 0, 0, 0, 9602, -810, 0, 0, 0, 0, 9597, -807, 0, 0, 0, 0, 9594, -804, 0, 0, 0, 0, 9588, -802, 0, 0, 0, 0, 9585, -799, 0, 0, 0, 0, 9582, -796, 0, 0, 0, 0, 9578, -792, 0, 0, 0, 0, 9572, -789, 0, 0, 0, 0, 9568, -785, 0, 0, 0, 0, 9563, -780, 0, 0, 0, 0, 9560, -775, 0, 0, 0, 0, 9557, -771, 0, 0, 0, 0, 9554, -766, 0, 0, 0, 0, 9551, -762, 0, 0, 0, 0, 9548, -757, 0, 0, 0, 0, 9545, -752, 0, 0, 0, 0, 9543, -746, 0, 0, 0, 0, 9540, -740, 0, 0, 0, 0, 9537, -732, 0, 0, 0, 0, 9534, -724, 0, 0, 0, 0, 9532, -713, 0, 0, 0, 0, 9531, -706, 0, 0, 0, 0, 9531, -695, 0, 0, 0, 0, 9531, -677, 0, 0, 0, 0, 9532, -606, 0, 0, 0, 0, 9531, -602, 0, 0, 0, 0, 9530, -597, 0, 0, 0, 0, 9529, -594, 0, 0, 0, 0, 9527, -591, 0, 0, 0, 0, 9524, -588, 0, 0, 0, 0, 9522, -584, 0, 0, 0, 0, 9519, -582, 0, 0, 0, 0, 9515, -578, 0, 0, 0, 0, 9512, -576, 0, 0, 0, 0, 9508, -573, 0, 0, 0, 0, 9505, -572, 0, 0, 0, 0, 9501, -570, 0, 0, 0, 0, 9496, -569, 0, 0, 0, 0, 9492, -567, 0, 0, 0, 0, 9489, -567, 0, 0, 0, 0, 9484, -566, 0, 0, 0, 0, 9477, -565, 0, 0, 0, 0, 9468, -564, 0, 0, 0, 0, 9450, -565, 0, 0, 0, 0, 8581, -566, 0, 0, 0, 0, 8576, -567, 0, 0, 0, 0, 8570, -569, 0, 0, 0, 0, 8565, -572, 0, 0, 0, 0, 8561, -575, 0, 0, 0, 0, 8554, -579, 0, 0, 0, 0, 8548, -583, 0, 0, 0, 0, 8544, -587, 0, 0, 0, 0, 8538, -590, 0, 0, 0, 0, 8534, -593, 0, 0, 0, 0, 8529, -595, 0, 0, 0, 0, 8527, -598, 0, 0, 0, 0, 8524, -602, 0, 0, 0, 0, 8521, -605, 0, 0, 0, 0, 8518, -608, 0, 0, 0, 0, 8516, -612, 0, 0, 0, 0, 8515, -617, 0, 0, 0, 0, 8513, -622, 0, 0, 0, 0, 8512, -626, 0, 0, 0, 0, 8511, -631, 0, 0, 0, 0, 8511, -637, 0, 0, 0, 0, 8511, -641, 0, 0, 0, 0, 8510, -707, 0, 0, 0, 0, 8508, -718, 0, 0, 0, 0, 8506, -725, 0, 0, 0, 0, 8503, -735, 0, 0, 0, 0, 8500, -743, 0, 0, 0, 0, 8497, -753, 0, 0, 0, 0, 8492, -758, 0, 0, 0, 0, 8489, -763, 0, 0, 0, 0, 8480, -775, 0, 0, 0, 0, 8477, -781, 0, 0, 0, 0, 8472, -784, 0, 0, 0, 0, 8466, -790, 0, 0, 0, 0, 8459, -796, 0, 0, 0, 0, 8451, -802, 0, 0, 0, 0, 8443, -805, 0, 0, 0, 0, 8437, -809, 0, 0, 0, 0, 8429, -812, 0, 0, 0, 0, 8422, -815, 0, 0, 0, 0, 8415, -818, 0, 0, 0, 0, 8407, -819, 0, 0, 0, 0, 8397, -820, 0, 0, 0, 0, 8383, -821, 0, 0, 0, 0, 8373, -821, 0, 0, 0, 0, 7935, -821, 0, 0, 0, 0, 7872, -820, 0, 0, 0, 0, 7863, -821, 0, 0, 0, 0, 7855, -820, 0, 0, 0, 0, 7848, -820, 0, 0, 0, 0, 7841, -818, 0, 0, 0, 0, 7834, -817, 0, 0, 0, 0, 7826, -813, 0, 0, 0, 0, 7818, -810, 0, 0, 0, 0, 7811, -807, 0, 0, 0, 0, 7804, -804, 0, 0, 0, 0, 7797, -801, 0, 0, 0, 0, 7792, -796, 0, 0, 0, 0, 7786, -792, 0, 0, 0, 0, 7780, -786, 0, 0, 0, 0, 7774, -781, 0, 0, 0, 0, 7769, -774, 0, 0, 0, 0, 7764, -768, 0, 0, 0, 0, 7759, -761, 0, 0, 0, 0, 7755, -755, 0, 0, 0, 0, 7751, -748, 0, 0, 0, 0, 7749, -739, 0, 0, 0, 0, 7745, -732, 0, 0, 0, 0, 7743, -725, 0, 0, 0, 0, 7741, -717, 0, 0, 0, 0, 7739, -704, 0, 0, 0, 0, 7739, -692)
+}
+point_count = 269
 
 [node name="world" type="Node2D"]
 
@@ -9166,82 +9183,231 @@ position = Vector2(41.9706, -0.218494)
 scale = Vector2(0.814453, 0.158203)
 texture = ExtResource("1_f3sb7")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_fj7yv")]
-position = Vector2(313, -429)
+[node name="player" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(369, -406)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(7989, 5814)
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/+z/AAABAAIAAAD2/+v/AAABAAEAAAD1/+z/AAABAAIAAAD1/+v/AAABAAEAAAD0/+z/AAABAAIAAAD0/+v/AAABAAEAAADz/+z/AAABAAIAAADz/+v/AAABAAEAAADy/+z/AAABAAIAAADy/+v/AAABAAEAAADx/+z/AAABAAIAAADx/+v/AAABAAEAAADw/+z/AAABAAIAAADw/+v/AAABAAEAAADv/+z/AAABAAIAAADv/+v/AAABAAEAAADu/+z/AAABAAIAAADu/+v/AAABAAEAAADt/+z/AAABAAIAAADt/+v/AAABAAAAAADs/+z/AAABAAIAAADs/+v/AAABAAAAAADr/+z/AAABAAIAAADr/+v/AAABAAAAAADq/+z/AAABAAIAAADq/+v/AAABAAAAAADp/+z/AAABAAIAAADp/+v/AAABAAAAAADo/+z/AAABAAIAAADo/+v/AAABAAAAAADn/+z/AAABAAIAAADn/+v/AAABAAAAAADm/+z/AAABAAIAAADm/+v/AAABAAAAAADl/+z/AAABAAIAAADl/+v/AAABAAAAAADk/+z/AAABAAIAAADk/+v/AAABAAAAAADj/+z/AAABAAIAAADj/+v/AAABAAAAAADi/+z/AAABAAIAAADi/+v/AAABAAAAAADh/+z/AAAAAAIAAADh/+v/AAAAAAAAAAD2/+r/AAABAAEAAAD1/+r/AAABAAEAAAD0/+r/AAABAAAAAAD4/+z/AAABAAIAAAD4/+v/AAABAAEAAAD4/+r/AAABAAEAAAD3/+z/AAABAAIAAAD3/+v/AAABAAEAAAD3/+r/AAABAAEAAAD4/+n/AAABAAAAAAD3/+n/AAABAAAAAAD//+z/AAACAAIAAAD//+v/AAACAAEAAAD//+r/AAACAAEAAAD//+n/AAACAAEAAAD//+j/AAACAAEAAAD+/+z/AAABAAIAAAD+/+v/AAABAAEAAAD+/+r/AAABAAEAAAD+/+n/AAABAAEAAAD+/+j/AAABAAEAAAD9/+z/AAABAAIAAAD9/+v/AAABAAEAAAD9/+r/AAABAAEAAAD9/+n/AAABAAEAAAD9/+j/AAABAAEAAAD8/+z/AAABAAIAAAD8/+v/AAABAAEAAAD8/+r/AAABAAEAAAD8/+n/AAABAAEAAAD8/+j/AAABAAEAAAD7/+z/AAABAAIAAAD7/+v/AAABAAEAAAD7/+r/AAABAAEAAAD7/+n/AAABAAEAAAD7/+j/AAABAAEAAAD6/+z/AAABAAIAAAD6/+v/AAABAAEAAAD6/+r/AAABAAEAAAD6/+n/AAABAAEAAAD6/+j/AAABAAEAAAD5/+z/AAABAAIAAAD5/+v/AAABAAEAAAD5/+r/AAABAAEAAAD5/+n/AAABAAEAAAD5/+j/AAAAAAEAAAADAO7/AAABAAIAAAADAO3/AAABAAEAAAADAOz/AAACAAEAAAADAOv/AAABAAEAAAADAOr/AAABAAAAAAACAO7/AAAAAAIAAAACAO3/AAAAAAEAAAACAOz/AAAAAAEAAAACAOv/AAAAAAEAAAACAOr/AAAAAAAAAAAOAO7/AAABAAIAAAAOAO3/AAABAAEAAAANAO7/AAABAAIAAAANAO3/AAABAAAAAAAMAO7/AAABAAIAAAAMAO3/AAABAAAAAAALAO7/AAABAAIAAAALAO3/AAABAAAAAAAKAO7/AAABAAIAAAAKAO3/AAABAAAAAAAJAO7/AAABAAIAAAAJAO3/AAABAAAAAAAIAO7/AAABAAIAAAAIAO3/AAABAAAAAAAHAO7/AAABAAIAAAAHAO3/AAABAAAAAAAGAO7/AAABAAIAAAAGAO3/AAABAAAAAAAFAO7/AAABAAIAAAAFAO3/AAABAAAAAAAEAO7/AAABAAIAAAAEAO3/AAABAAAAAAAOAOv/AAABAAEAAAAOAOr/AAABAAAAAAANAOv/AAABAAIAAAANAOr/AAABAAAAAAAMAOv/AAABAAIAAAAMAOr/AAABAAAAAAALAOv/AAABAAIAAAALAOr/AAABAAAAAAAKAOv/AAABAAIAAAAKAOr/AAABAAAAAAAJAOv/AAABAAIAAAAJAOr/AAABAAAAAAAIAOv/AAABAAIAAAAIAOr/AAABAAAAAAAHAOv/AAABAAIAAAAHAOr/AAABAAAAAAAGAOv/AAABAAIAAAAGAOr/AAABAAAAAAAFAOv/AAABAAIAAAAFAOr/AAABAAAAAAAEAOv/AAABAAIAAAAEAOr/AAABAAAAAAAPAO7/AAACAAIAAAAPAO3/AAACAAEAAAAPAOz/AAACAAEAAAAPAOv/AAACAAEAAAAPAOr/AAACAAAAAAAOAOz/AAAAAAEAAAD2/+n/AAABAAAAAAD5/+f/AAAAAAAAAAD6/+f/AAABAAAAAAD7/+f/AAABAAAAAAD8/+f/AAABAAAAAAD//+f/AAACAAAAAAD+/+f/AAABAAAAAAD9/+f/AAABAAAAAADz/+r/AAABAAAAAADy/+r/AAABAAAAAADx/+r/AAABAAAAAAD1/+n/AAAAAAAAAAD1/+f/AAACAAIAAAD0/+f/AAABAAIAAADz/+f/AAABAAIAAADy/+f/AAABAAIAAADx/+f/AAAAAAIAAADw/+r/AAABAAAAAADv/+r/AAABAAAAAADu/+r/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD2/+z/AAABAAIAAAD2/+v/AAABAAEAAAD1/+z/AAABAAIAAAD1/+v/AAABAAEAAAD0/+z/AAABAAIAAAD0/+v/AAABAAEAAADz/+z/AAABAAIAAADz/+v/AAABAAEAAADy/+z/AAABAAIAAADy/+v/AAABAAEAAADx/+z/AAABAAIAAADx/+v/AAABAAEAAADw/+z/AAABAAIAAADw/+v/AAABAAEAAADv/+z/AAABAAIAAADv/+v/AAABAAEAAADu/+z/AAABAAIAAADu/+v/AAABAAEAAADt/+z/AAABAAIAAADt/+v/AAABAAAAAADs/+z/AAABAAIAAADs/+v/AAABAAAAAADr/+z/AAABAAIAAADr/+v/AAABAAAAAADq/+z/AAABAAIAAADq/+v/AAABAAAAAADp/+z/AAABAAIAAADp/+v/AAABAAAAAADo/+z/AAABAAIAAADo/+v/AAABAAAAAADn/+z/AAABAAIAAADn/+v/AAABAAAAAADm/+z/AAABAAIAAADm/+v/AAABAAAAAADl/+z/AAABAAIAAADl/+v/AAABAAAAAADk/+z/AAABAAIAAADk/+v/AAABAAAAAADj/+z/AAABAAIAAADj/+v/AAABAAAAAADi/+z/AAABAAIAAADi/+v/AAABAAAAAADh/+z/AAAAAAIAAADh/+v/AAAAAAAAAAD2/+r/AAABAAEAAAD1/+r/AAABAAEAAAD0/+r/AAABAAAAAAD4/+z/AAABAAIAAAD4/+v/AAABAAEAAAD4/+r/AAABAAEAAAD3/+z/AAABAAIAAAD3/+v/AAABAAEAAAD3/+r/AAABAAEAAAD4/+n/AAABAAAAAAD3/+n/AAABAAAAAAD//+z/AAACAAIAAAD//+v/AAACAAEAAAD//+r/AAACAAEAAAD//+n/AAACAAEAAAD//+j/AAACAAEAAAD+/+z/AAABAAIAAAD+/+v/AAABAAEAAAD+/+r/AAABAAEAAAD+/+n/AAABAAEAAAD+/+j/AAABAAEAAAD9/+z/AAABAAIAAAD9/+v/AAABAAEAAAD9/+r/AAABAAEAAAD9/+n/AAABAAEAAAD9/+j/AAABAAEAAAD8/+z/AAABAAIAAAD8/+v/AAABAAEAAAD8/+r/AAABAAEAAAD8/+n/AAABAAEAAAD8/+j/AAABAAEAAAD7/+z/AAABAAIAAAD7/+v/AAABAAEAAAD7/+r/AAABAAEAAAD7/+n/AAABAAEAAAD7/+j/AAABAAEAAAD6/+z/AAABAAIAAAD6/+v/AAABAAEAAAD6/+r/AAABAAEAAAD6/+n/AAABAAEAAAD6/+j/AAABAAEAAAD5/+z/AAABAAIAAAD5/+v/AAABAAEAAAD5/+r/AAABAAEAAAD5/+n/AAABAAEAAAD5/+j/AAAAAAEAAAADAO7/AAABAAIAAAADAO3/AAABAAEAAAADAOz/AAACAAEAAAADAOv/AAABAAEAAAADAOr/AAABAAAAAAACAO7/AAAAAAIAAAACAO3/AAAAAAEAAAACAOz/AAAAAAEAAAACAOv/AAAAAAEAAAACAOr/AAAAAAAAAAAOAO7/AAABAAIAAAAOAO3/AAABAAEAAAANAO7/AAABAAIAAAANAO3/AAABAAAAAAAMAO7/AAABAAIAAAAMAO3/AAABAAAAAAALAO7/AAABAAIAAAALAO3/AAABAAAAAAAKAO7/AAABAAIAAAAKAO3/AAABAAAAAAAJAO7/AAABAAIAAAAJAO3/AAABAAAAAAAIAO7/AAABAAIAAAAIAO3/AAABAAAAAAAHAO7/AAABAAIAAAAHAO3/AAABAAAAAAAGAO7/AAABAAIAAAAGAO3/AAABAAAAAAAFAO7/AAABAAIAAAAFAO3/AAABAAAAAAAEAO7/AAABAAIAAAAEAO3/AAABAAAAAAAOAOv/AAABAAEAAAAOAOr/AAABAAAAAAANAOv/AAABAAIAAAANAOr/AAABAAAAAAAMAOv/AAABAAIAAAAMAOr/AAABAAAAAAALAOv/AAABAAIAAAALAOr/AAABAAAAAAAKAOv/AAABAAIAAAAKAOr/AAABAAAAAAAJAOv/AAABAAIAAAAJAOr/AAABAAAAAAAIAOv/AAABAAIAAAAIAOr/AAABAAAAAAAHAOv/AAABAAIAAAAHAOr/AAABAAAAAAAGAOv/AAABAAIAAAAGAOr/AAABAAAAAAAFAOv/AAABAAIAAAAFAOr/AAABAAAAAAAEAOv/AAABAAIAAAAEAOr/AAABAAAAAAAPAO7/AAACAAIAAAAPAO3/AAACAAEAAAAPAOz/AAACAAEAAAAPAOv/AAACAAEAAAAPAOr/AAACAAAAAAAOAOz/AAAAAAEAAAD2/+n/AAABAAAAAAD5/+f/AAAAAAAAAAD6/+f/AAABAAAAAAD7/+f/AAABAAAAAAD8/+f/AAABAAAAAAD//+f/AAACAAAAAAD+/+f/AAABAAAAAAD9/+f/AAABAAAAAADz/+r/AAABAAAAAADy/+r/AAABAAAAAADx/+r/AAABAAAAAAD1/+n/AAAAAAAAAAD1/+f/AAACAAIAAAD0/+f/AAABAAIAAADz/+f/AAABAAIAAADy/+f/AAABAAIAAADx/+f/AAAAAAIAAADw/+r/AAABAAAAAADv/+r/AAABAAAAAADu/+r/AAAAAAAAAAAVAO3/AAACAAIAAAAVAOz/AAACAAEAAAAVAOv/AAACAAAAAAAUAO3/AAABAAIAAAAUAOz/AAABAAEAAAAUAOv/AAABAAAAAAATAO3/AAABAAIAAAATAOz/AAABAAEAAAATAOv/AAABAAAAAAASAO3/AAAAAAIAAAASAOz/AAAAAAEAAAASAOv/AAAAAAAAAAAYAOr/AAACAAIAAAAYAOn/AAACAAAAAAAXAOr/AAAAAAIAAAAXAOn/AAAAAAAAAAAwAOv/AAACAAIAAAAwAOr/AAACAAEAAAAwAOn/AAACAAEAAAAwAOj/AAACAAAAAAAvAOv/AAABAAIAAAAvAOr/AAABAAEAAAAvAOn/AAABAAEAAAAvAOj/AAABAAAAAAAuAOv/AAABAAIAAAAuAOr/AAABAAEAAAAuAOn/AAABAAEAAAAuAOj/AAABAAAAAAAtAOv/AAABAAIAAAAtAOr/AAABAAEAAAAtAOn/AAAAAAEAAAAtAOj/AAAAAAAAAAAsAOv/AAABAAIAAAAsAOr/AAABAAAAAAArAOv/AAABAAIAAAArAOr/AAABAAAAAAAqAOv/AAABAAIAAAAqAOr/AAABAAAAAAApAOv/AAABAAIAAAApAOr/AAABAAAAAAAoAOv/AAABAAIAAAAoAOr/AAABAAAAAAAnAOv/AAABAAIAAAAnAOr/AAABAAAAAAAmAOv/AAABAAIAAAAmAOr/AAABAAAAAAAlAOv/AAABAAIAAAAlAOr/AAABAAAAAAAkAOv/AAABAAIAAAAkAOr/AAABAAEAAAAjAOv/AAABAAIAAAAjAOr/AAABAAEAAAAiAOv/AAABAAIAAAAiAOr/AAABAAEAAAAiAOn/AAABAAEAAAAiAOj/AAABAAAAAAAhAOv/AAABAAIAAAAhAOr/AAABAAEAAAAhAOn/AAABAAEAAAAhAOj/AAAAAAAAAAAgAOv/AAABAAIAAAAgAOr/AAABAAEAAAAgAOn/AAABAAAAAAAfAOv/AAABAAIAAAAfAOr/AAABAAEAAAAfAOn/AAABAAAAAAAeAOv/AAABAAIAAAAdAOv/AAABAAIAAAAcAOv/AAABAAIAAAAcAOr/AAABAAEAAAAbAOv/AAABAAIAAAAbAOr/AAABAAEAAAAbAOn/AAABAAEAAAAaAOv/AAAAAAIAAAAaAOr/AAAAAAEAAAAaAOn/AAAAAAEAAAAaAOj/AAAAAAAAAAAeAOn/AAABAAEAAAAdAOn/AAABAAAAAAAcAOn/AAABAAEAAAAeAOr/AAABAAEAAAAdAOr/AAABAAEAAAAbAOj/AAABAAAAAAAcAOj/AAACAAAAAAAjAOj/AAABAAEAAAAkAOj/AAACAAAAAAAkAOn/AAACAAEAAAAjAOn/AAABAAEAAAApAOj/AAABAAEAAAA=")
 tile_set = SubResource("TileSet_036b0")
 
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(6904, 489)
-curve = SubResource("Curve2D_ioo17")
-
-[node name="Loop" parent="Path2D" instance=ExtResource("4_pkg7o")]
-position = Vector2(1793, -320)
-speed = -0.001
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/Loop"]
-position = Vector2(5.89006, -118.006)
-scale = Vector2(0.643218, 0.643042)
-texture = ExtResource("5_pkg7o")
-
-[node name="Loop2" parent="Path2D" instance=ExtResource("4_pkg7o")]
-position = Vector2(1793, -320)
-speed = -0.001
-start = 0.2
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/Loop2"]
-position = Vector2(13.8846, -125.342)
-scale = Vector2(0.665825, 0.665825)
-texture = ExtResource("6_pkg7o")
-
-[node name="Loop3" parent="Path2D" instance=ExtResource("4_pkg7o")]
-position = Vector2(1794, -320)
-rotation = 0.00186335
-speed = -0.001
-start = 0.4
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/Loop3"]
-position = Vector2(13.8846, -125.342)
-scale = Vector2(0.665825, 0.665825)
-texture = ExtResource("5_gbfbk")
-
-[node name="Loop4" parent="Path2D" instance=ExtResource("4_pkg7o")]
-position = Vector2(1793, -320)
-speed = -0.001
-start = 0.6
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/Loop4"]
-position = Vector2(13.8846, -125.342)
-scale = Vector2(0.665825, 0.665825)
-texture = ExtResource("8_ioo17")
-
-[node name="Tut sushi" type="Path2D" parent="."]
+[node name="Platform1" type="Path2D" parent="."]
 position = Vector2(1645, 781)
 curve = SubResource("Curve2D_wse8f")
 
-[node name="BackNForth" type="PathFollow2D" parent="Tut sushi"]
+[node name="BackNForth" type="PathFollow2D" parent="Platform1"]
 position = Vector2(2505, -1366)
 rotation = 1.57899
 loop = false
 script = ExtResource("6_gbfbk")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tut sushi/BackNForth"]
+[node name="Sprite2D" type="Sprite2D" parent="Platform1/BackNForth"]
 position = Vector2(24.8808, 133.022)
 rotation = 3.14159
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_pkg7o")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Tut sushi/BackNForth/Sprite2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Platform1/BackNForth/Sprite2D"]
 position = Vector2(41.4683, 221.704)
 rotation = 3.14159
 scale = Vector2(1.66667, 1.66667)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tut sushi/BackNForth/Sprite2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/BackNForth/Sprite2D/CharacterBody2D"]
 position = Vector2(24.9131, 97.0223)
 rotation = 1.5708
 scale = Vector2(8, 8)
 shape = SubResource("CapsuleShape2D_dwbse")
+
+[node name="Platform2" type="Path2D" parent="."]
+position = Vector2(6904, 489)
+curve = SubResource("Curve2D_ioo17")
+
+[node name="Loop" parent="Platform2" instance=ExtResource("4_pkg7o")]
+position = Vector2(1793, -320)
+speed = -0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2/Loop"]
+position = Vector2(5.89006, -118.006)
+scale = Vector2(0.643218, 0.643042)
+texture = ExtResource("5_pkg7o")
+
+[node name="Loop2" parent="Platform2" instance=ExtResource("4_pkg7o")]
+position = Vector2(1793, -320)
+speed = -0.001
+start = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2/Loop2"]
+position = Vector2(13.8846, -125.342)
+scale = Vector2(0.665825, 0.665825)
+texture = ExtResource("6_pkg7o")
+
+[node name="Loop3" parent="Platform2" instance=ExtResource("4_pkg7o")]
+position = Vector2(1793, -320)
+speed = -0.001
+start = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2/Loop3"]
+position = Vector2(13.8846, -125.342)
+scale = Vector2(0.665825, 0.665825)
+texture = ExtResource("5_gbfbk")
+
+[node name="Loop4" parent="Platform2" instance=ExtResource("4_pkg7o")]
+position = Vector2(1793, -320)
+speed = -0.001
+start = 0.6
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2/Loop4"]
+position = Vector2(13.8846, -125.342)
+scale = Vector2(0.665825, 0.665825)
+texture = ExtResource("8_ioo17")
+
+[node name="Platform3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ic0uy")
+
+[node name="Loop1" parent="Platform3" instance=ExtResource("10_wse8f")]
+position = Vector2(13504, 431)
+start = 0.6
+
+[node name="Sprite2D2" type="Sprite2D" parent="Platform3/Loop1"]
+position = Vector2(-7.15947, 124.991)
+rotation = 3.14159
+scale = Vector2(0.586956, 0.476938)
+texture = ExtResource("11_ic0uy")
+
+[node name="Loop2" parent="Platform3" instance=ExtResource("10_wse8f")]
+position = Vector2(13504, 431)
+start = 0.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Platform3/Loop2"]
+position = Vector2(-3.16851, 131.996)
+rotation = 3.14159
+scale = Vector2(0.640646, 0.661233)
+texture = ExtResource("12_k3n1d")
+
+[node name="Platform4" type="Path2D" parent="."]
+position = Vector2(6904, 488)
+curve = SubResource("Curve2D_k3n1d")
+
+[node name="Loop" parent="Platform4" instance=ExtResource("4_pkg7o")]
+position = Vector2(7740, -707)
+rotation = 1.56952
+speed = -0.001
+
+[node name="1" parent="Platform4/Loop" index="0"]
+position = Vector2(23.2071, -161.971)
+
+[node name="CharacterBody2D" parent="Platform4/Loop/1" index="0"]
+position = Vector2(-23.4451, 433.331)
+
+[node name="CollisionShape2D" parent="Platform4/Loop/1/CharacterBody2D" index="0"]
+position = Vector2(-5.40144, 4.15263)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4/Loop"]
+position = Vector2(14.8274, 135.019)
+rotation = -3.14159
+scale = Vector2(0.643218, 0.643042)
+texture = ExtResource("5_pkg7o")
+
+[node name="Loop2" parent="Platform4" instance=ExtResource("4_pkg7o")]
+position = Vector2(7740.18, -564.142)
+rotation = 1.56952
+progress = 142.86
+speed = -0.001
+start = 0.2
+
+[node name="1" parent="Platform4/Loop2" index="0"]
+position = Vector2(14.161, -125.982)
+
+[node name="CharacterBody2D" parent="Platform4/Loop2/1" index="0"]
+position = Vector2(-3.50382, 133.329)
+
+[node name="CollisionShape2D" parent="Platform4/Loop2/1/CharacterBody2D" index="0"]
+position = Vector2(-17.8022, 312.211)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4/Loop2"]
+position = Vector2(0.815867, 144.001)
+rotation = 3.14159
+scale = Vector2(0.665825, 0.665825)
+texture = ExtResource("6_pkg7o")
+
+[node name="Loop3" parent="Platform4" instance=ExtResource("4_pkg7o")]
+position = Vector2(7740.53, -137.568)
+rotation = 1.56952
+progress = 569.23
+h_offset = 0.2
+v_offset = 0.2
+speed = -0.001
+start = 0.4
+
+[node name="CollisionShape2D" parent="Platform4/Loop3/1/CharacterBody2D" index="0"]
+position = Vector2(-6.06478, 382.071)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4/Loop3"]
+position = Vector2(18.8107, 148.024)
+rotation = 3.14159
+scale = Vector2(0.665825, 0.665825)
+texture = ExtResource("5_gbfbk")
+
+[node name="Loop4" parent="Platform4" instance=ExtResource("4_pkg7o")]
+position = Vector2(7740, -707)
+rotation = 1.56952
+speed = -0.001
+start = 0.6
+
+[node name="CollisionShape2D" parent="Platform4/Loop4/1/CharacterBody2D" index="0"]
+position = Vector2(32.2617, 433.09)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform4/Loop4"]
+position = Vector2(28.7404, 203.037)
+rotation = 3.14159
+scale = Vector2(0.64229, 0.64229)
+texture = ExtResource("8_ioo17")
+
+[node name="Checkpoint" parent="." instance=ExtResource("14_hiqwa")]
+position = Vector2(369, 208)
+
+[node name="worldborders" type="Node2D" parent="."]
+
+[node name="DeathContainer" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(11836, 1607)
+
+[node name="DeathContainer7" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(-1707, 1097)
+scale = Vector2(2.75662, 1)
+
+[node name="DeathContainer6" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(7743, 1607)
+
+[node name="DeathContainer5" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(14385, 778)
+
+[node name="DeathContainer4" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(15344, -115)
+scale = Vector2(1.34152, 0.361012)
+
+[node name="DeathContainer8" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(17406, 147)
+scale = Vector2(2.46095, 0.435423)
+
+[node name="DeathContainer2" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(13778, 1166)
+
+[node name="DeathContainer3" parent="worldborders" instance=ExtResource("3_hiqwa")]
+position = Vector2(13143, 1382)
+
+[node name="checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="checkpoints" instance=ExtResource("14_hiqwa")]
+position = Vector2(17216, -520)
+
+[node name="Checkpoint2" parent="checkpoints" instance=ExtResource("14_hiqwa")]
+position = Vector2(14098, -282)
+
+[node name="Checkpoint3" parent="checkpoints" instance=ExtResource("14_hiqwa")]
+position = Vector2(7743, -779)
+
+[editable path="Platform4/Loop"]
+[editable path="Platform4/Loop2"]
+[editable path="Platform4/Loop3"]
+[editable path="Platform4/Loop4"]

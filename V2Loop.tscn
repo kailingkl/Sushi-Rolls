@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw1f1v4djqx66"]
+
+[ext_resource type="Script" uid="uid://do6gn2hthncw1" path="res://path_follow_2d.gd" id="1_1irrd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3n1d"]
+radius = 94.0
+height = 260.008
+
+[node name="PathFollow2D" type="PathFollow2D"]
+rotation = 3.14032
+script = ExtResource("1_1irrd")
+speed = 0.003
+start = 0.2
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(4.45123, 73.2605)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k3n1d")

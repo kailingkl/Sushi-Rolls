@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://18wpnr8fk6ea"]
+
+[ext_resource type="Script" uid="uid://c6tydjdo7ixpf" path="res://checkpoint.gd" id="1_luqgl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njsvn"]
+
+[node name="Checkpoint" type="Area2D"]
+scale = Vector2(23, 19.44)
+script = ExtResource("1_luqgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_njsvn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

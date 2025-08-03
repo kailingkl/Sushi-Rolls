@@ -41,3 +41,5 @@ func _ready() -> void:
 
 func die():
 	position = last_checkpoint
+	
+	

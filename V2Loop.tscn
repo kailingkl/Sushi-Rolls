@@ -15,6 +15,7 @@ start = 0.2
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(4.45123, 73.2605)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k3n1d")

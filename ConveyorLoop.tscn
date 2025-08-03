@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://q6r0ge70vanw"]
+
+[ext_resource type="Script" uid="uid://d3jo7ui50mwlj" path="res://loop.gd" id="1_k4nxg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pkg7o"]
+radius = 18.3966
+height = 43.7183
+
+[node name="Loop" type="PathFollow2D"]
+position = Vector2(0, -25)
+rotation = 0.000931677
+script = ExtResource("1_k4nxg")
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(7.88808, -120.007)
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="1"]
+position = Vector2(3.39874, 69.9962)
+scale = Vector2(1.23503, 0.80065)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1/CharacterBody2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_pkg7o")
